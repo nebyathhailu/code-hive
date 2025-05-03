@@ -1,5 +1,8 @@
+import kotlin.math.pow
+
 fun main()
 {
+
     var car = Cars("Subaru","Legacy","White",5)
     car.carry(7)
     car.carry(4)
@@ -17,6 +20,46 @@ fun main()
     println("The parking fee for ${bus.capacity} people for $parkingHours hours is $parkingFee ")
     var tripFare = bus.maxTripFare(20.0)
     println("The total fare from ${bus.capacity} people is $tripFare shilling.")
+
+    var num = arrayOf(6,8,9,5,4)
+    num.forEach{ x ->
+        var y=x+5
+        println(y)
+        println(print)
+        var name="Jull"
+        println("Hi, ${name[0]}")
+        var v= getFullName("vio","blu")
+        println(v)
+    }
+    println(add(6,9))
+
+    var programmingLanguages = arrayOf("js","kotlin","java","ruby","python", "go")
+    programmingLanguages[5] = "rust"
+    println(programmingLanguages.contentToString())
+    var string:String? = ""
+    for (programmingLanguage in programmingLanguages){
+        string+="$programmingLanguage "
+          }
+    println(string)
+    programmingLanguages.forEach{programmingLanguage ->
+        println(programmingLanguage)
+    }
+    programmingLanguages.forEachIndexed{
+        index,programmingLanguage -> if(index==0){
+            println(programmingLanguage)
+    }
+    }
+
+    var trainers = mutableMapOf("kotlin" to "John", "python" to "James", "js" to "Hunter")
+    trainers.put("das","Sharon")
+    trainers.forEach{course,trainer -> println("$trainer is $course instructor.") }
+    greeting(*programmingLanguages)
+
+    var person = Person("Peter",30)
+}
+
+fun greeting( vararg itemToGreet:String) {
+    itemToGreet.forEach{item -> println("Hello $item")}
 }
 open class Cars(var make:String, var model:String, var color:String, var capacity:Int){
     fun carry(people:Int){
@@ -48,55 +91,46 @@ class Bus( make:String, model:String, color:String, capacity:Int): Cars(make, mo
     }
 }
 
+class Person(var name:String, var age:Int){
+    init{
+        println("init 1")
+    }
+}
+
+    val toUpperCase = "kotlin".uppercase()
+    val toLowerCase = "KOTLIN".lowercase()
+
+    var num = 3
+    var print = when {
+        num>20 -> "greater"
+        num==23 -> "exact number"
+        else -> "none"
+}
+
+fun add():String
+{
+    var a="Beki"
+    var b="Mani"
+    return "$a & $b"
+}
+fun getFullName(firstName: String, lastName: String):String{
+    var fullName = firstName + " " + lastName
+    return fullName
+}
 
 
+    fun generateAnswer(){
+        val count = 25
 
+        val answerString= when {
+            count ==24 -> " you got the answer"
+            count != 24 -> "you missed the answer"
+            else -> "none"
+        }
+ return println (answerString)
+    }
 
-//{S
-//    val toUpperCase = "kotlin".uppercase()
-//    val toLowerCase = "KOTLIN".lowercase()
-//    println(toUpperCase)
-//    println(toLowerCase)
-//    var num = 3
-//    var print = when {
-//        num>20 -> "greater"
-//        num==23 -> "exact number"
-//        else -> "none"
-//}
-//var num = arrayOf(6,8,9,5,4)
-//num.forEach{ x ->
-//    var y=x+5
-//    println(y)
-//    println(print)
-//    var name="Jull"
-//    println("Hi, ${name[0]}")
-//    var v= getFullName("vio","blu")
-//    println(v)
-//}
-//fun add():String
-//{
-//    var a="Beki"
-//    var b="Mani"
-//    return "$a & $b"
-//}
-//fun getFullName(firstName: String, lastName: String):String{
-//    var fullName = firstName + " " + lastName
-//    return fullName
-//}
-//
-
-//    fun generateAnswer(){
-//        val count = 25
-//
-//        val answerString= when {
-//            count ==24 -> " you got the answer"
-//            count != 24 -> "you missed the answer"
-//            else -> "none"
-//        }
-// return println (answerString)
-//    }
-//}
-/*  VOLUME OF A SPHERE AND TOTAL PRICE
+/*  VOLUME OF A SPHERE AND TOTAL PRICE*/
 fun volume(d:Double,a:Double):Double{
     val p = 3.1415
     var r = d/2
@@ -110,23 +144,24 @@ fun price(volume1:Double, volume2:Double):Double{
    val totalPrice = (volume1 + volume2)* 16.83 * 10e-6
     return totalPrice
 }
-  fun main(){val iris = price(volume(5.0,18.0), volume(4.9,8.0))
-   println(iris)}
-  */
-//
-//fun checker(x:String){
-//    var password = "noeler"
-//    var password1 = password.lowercase().toCharArray().sortedArray().contentToString()
-//    var y =x.lowercase().toCharArray().sortedArray().contentToString()
-//    println(y)
-//    println(password1)
-//    if(password1 === y){
-//        println("invalid")
-//    }
-//    else{
-//        println("Good to go")
-//    }
-//}
+
+
+fun checker(x:String){
+    var password = "noeler"
+    var password1 = password.lowercase().toCharArray().sortedArray().contentToString()
+    var y =x.lowercase().toCharArray().sortedArray().contentToString()
+    println(y)
+    println(password1)
+    if(password1 === y){
+        println("invalid")
+    }
+    else{
+        println("Good to go")
+    }
+}
+
+fun add(a:Int,b:Int ):Int = a +b
+
 
 
 
