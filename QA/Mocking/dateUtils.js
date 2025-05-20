@@ -4,5 +4,5 @@ function getFormattedDate(date){
     console.log('After transformation:',formattedDate);
     return formattedDate;
 }
-//getFormattedDate(new Date());
+getFormattedDate(new Date());
 module.exports = {getFormattedDate};

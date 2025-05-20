@@ -1,6 +1,6 @@
 //1. function to revere a string
 
-const reverseString=(string)=>{
+ const reverseString=(string)=>{
     let x = string.split("").reverse().join("");
     return x;
 }
